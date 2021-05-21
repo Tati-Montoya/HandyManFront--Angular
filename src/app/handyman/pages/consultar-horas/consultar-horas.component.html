@@ -1,0 +1,117 @@
+<h2> Consultar Horas</h2>
+<hr>
+
+<div class="row">
+    <div class="col">
+
+        <form (ngSubmit)="consultar()" 
+              #miFormulario="ngForm"
+              autocomplete="off">
+
+<!-- Campo identificacion del tecnido -->
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Id Tecnico</label>
+                <div class="col-sm-5">
+                    <input type="text"
+                           class="form-control"
+                           ngModel
+                           name ="idTecnico"
+                           placeholder="Identificacion del tecnico"
+                           required>
+
+                    <span class="form-text text-danger"
+                          *ngIf="nombreValido()">
+                          
+                        Espacio Obligatorio
+                    </span> 
+
+                </div>
+            </div>
+
+            <!-- Campo Numero de la semana del año -->
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Numero semana</label>
+                <div class="col-sm-5">
+                    <input type="number"
+                           class="form-control"
+                           ngModel
+                           name ="numSemana"
+                           placeholder="Numero de la semana del año"
+                           required>
+
+                    <span class="form-text text-danger"
+                          *ngIf="numValido()">
+
+                        Espacio Obligatorio
+                    </span> 
+
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col">
+                    <button type="submit"
+                        [disabled]="miFormulario.invalid"
+                        class="btn btn-primary float-center">
+                        Consultar
+                    </button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+
+<!-- <div class="row">
+    <div class="col">
+        <span>Valid</span>
+        <pre>{{miFormulario.valid}}</pre>
+
+        <span>Value</span>
+        <pre>{{miFormulario.value | json}}</pre>
+
+
+    </div>
+</div> -->
+
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td colspan="2">Larry the Bird</td>
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+
+
+
+

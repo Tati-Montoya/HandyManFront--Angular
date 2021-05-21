@@ -1,0 +1,65 @@
+<h2> Reporte Servicio</h2>
+<hr> 
+
+<div class="row">
+    <div class="col">
+
+        <form (ngSubmit)="Guardar(miFormulario)"
+              #miFormulario="ngForm"
+              autocomplete="off">
+              
+<!-- Campo identificacion tecnico -->
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Id Tecnico</label>
+                <div class="col-sm-5">
+                    <input type="text"
+                           class="form-control"
+                           ngModel
+                           name ="idTecnico"
+                           placeholder="Identificacion del tecnico"
+                           required>
+
+                    <span class="form-text text-danger"
+                          *ngIf="idValido()"> 
+                        Espacio Obligatorio
+                    </span>
+
+                </div>
+
+            </div>
+
+            <!-- Campo Identificacion del servicio -->
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Id Servicio</label>
+                <div class="col-sm-5">
+                    <input type="text"
+                           class="form-control"
+                           ngModel
+                           name ="idServicio"
+                           placeholder="Identificacion del servicio"
+                           required>
+
+                    <span class="form-text text-danger"
+                          *ngIf="servicioValido()"> 
+                        Espacio Obligatorio
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <button type="submit"
+                            [disabled]="miFormulario.invalid"
+                            class="btn btn-primary float-center">
+                        Guardar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Campo Fecha y hora de inicio  -->
+        
+        </form>
+    </div>
+</div>
